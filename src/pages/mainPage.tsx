@@ -1,32 +1,32 @@
-import { Link } from "react-router-dom";
+import React, { useEffect, useRef } from "react";
+import Slider from "../components/mainPage/Slider";
+import { Reviews } from "../components/mainPage/Reviews";
+import About from "../components/mainPage/About";
+import Questions from "../components/mainPage/Questions";
+import { useLocation } from "react-router-dom";
 
-export default function HomePage() {
+const MainPage: React.FC = () => {
+  const location = useLocation();
+  const questionsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (location.search.includes("questions") && questionsRef)
+      questionsRef.current?.scrollIntoView({ behavior: "smooth" });
+    else window.scrollTo({ top: 0 });
+  }, [location.search, questionsRef.current]);
+
   return (
     <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/blogNews">Blog&News</Link>
-          </li>
-          <li>
-            <Link to="/tours">Tours</Link>
-          </li>
-          <li>
-            <Link to="/transport">Transport</Link>
-          </li>
-          <li>
-            <Link to="/reviews">Reviews</Link>
-          </li>
-          <li>
-            <Link to="/FAQ">FAQ</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <hr />
+      <Slider />
+      <div className="container py-80">
+        <Reviews />
+      </div>
+      {/* <About /> */}
+      <div ref={questionsRef}>
+        <Questions />
+      </div>
     </div>
   );
-}
+};
+
+export default MainPage;
