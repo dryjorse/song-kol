@@ -7,6 +7,7 @@ import review from "../../assets/images/common/review.svg";
 import star from "../../assets/images/common/star.svg";
 import starActive from "../../assets/images/common/star-active.svg";
 import Text from "../ui/Text";
+import { API_URL } from "../../http";
 
 const Reviews: React.FC = () => {
   const { data } = useSelector((state: RootState) => state.tour);
@@ -71,7 +72,7 @@ const Reviews: React.FC = () => {
                     >
                       <img
                         className="rounded-[4px] w-full h-full"
-                        src={image.photo}
+                        src={`${API_URL}${image[0]}`}
                         alt="review"
                       />
                     </li>
