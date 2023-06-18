@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
-import { RootState, useAppDispatch } from "../../store/store";
-import { getReviews } from "../../store/slices/reviewsSlice";
+import React from "react";
+import { RootState } from "../../store/store";
 import { useSelector } from "react-redux";
 import useMatchMedia from "use-match-media";
 import review from "../../assets/images/common/review.svg";
@@ -11,13 +10,8 @@ import Text from "../ui/Text";
 import { API_URL } from "../../http";
 
 export const Reviews: React.FC = () => {
-  const dispatch = useAppDispatch();
   const { data } = useSelector((state: RootState) => state.reviews);
   const isLDT = useMatchMedia("(max-width: 1350px)");
-
-  useEffect(() => {
-    dispatch(getReviews(2));
-  }, []);
 
   return (
     <section className="mb-80">

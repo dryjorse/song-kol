@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { RootState, useAppDispatch } from "../../store/store";
-import { getTours } from "../../store/slices/toursSlice";
+import { RootState } from "../../store/store";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 // @ts-ignore
@@ -13,13 +12,8 @@ import price from "../../assets/images/tours/price.svg";
 import calendar from "../../assets/images/tours/calendar.svg";
 
 const Slider: React.FC = () => {
-  const dispatch = useAppDispatch();
   const { data } = useSelector((state: RootState) => state.tours);
   const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    dispatch(getTours(4));
-  }, []);
 
   useEffect(() => {
     data.length && setActiveIndex(data[0]?.id);

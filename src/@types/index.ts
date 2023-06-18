@@ -73,7 +73,7 @@ export interface IReview {
   stars: number;
   name: string;
   text: string;
-  photos: { id: number; photo: string }[];
+  photos: string[];
   tour: string;
   date: {
     year: number;
