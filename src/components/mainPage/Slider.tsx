@@ -103,7 +103,7 @@ const Slider: React.FC = () => {
               onSlideChange={onSlideChange}
               modules={[Autoplay, Navigation]}
               navigation
-              // autoplay={{ delay: 3000, disableOnInteraction: false }}
+              autoplay={{ delay: 3000, disableOnInteraction: false }}
               watchSlidesProgress
               slideVisibleClass="swiper-slide-visible"
               loop

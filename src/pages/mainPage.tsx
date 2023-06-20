@@ -9,6 +9,7 @@ import { getTours } from "../store/slices/toursSlice";
 import { getReviews } from "../store/slices/reviewsSlice";
 import StatusCheck from "../components/ui/StatusCheck";
 import { useSelector } from "react-redux";
+import Team from "../components/mainPage/Team";
 
 const MainPage: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -42,6 +43,7 @@ const MainPage: React.FC = () => {
         <Reviews />
       </div>
       {/* <About /> */}
+      <Team />
       <div ref={questionsRef}>
         <Questions />
       </div>
