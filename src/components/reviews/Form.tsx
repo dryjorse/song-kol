@@ -117,7 +117,7 @@ const Form: React.FC = () => {
         stars: stars,
         text: description.value,
         photos: imageFiles,
-        tour: 1,
+        tour: feedBack.value,
       })
     );
     clearForm();

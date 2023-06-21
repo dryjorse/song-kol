@@ -87,6 +87,11 @@ const StageForm: React.FC<StageFormProps> = ({
     </button>
   ));
 
+  const onSelectTour = (value: string) => {
+    const selectedTour = tours.find((tour) => tour.name === value)?.id;
+    selectedTour && feedBack.onChangeOther(selectedTour + "");
+  };
+
   return (
     <>
       <SwitchTransition mode={"out-in"}>
@@ -156,8 +161,8 @@ const StageForm: React.FC<StageFormProps> = ({
                 <Select
                   placeholder="Select Item"
                   options={tours.map((tour) => tour.name)}
-                  value={feedBack.value}
-                  select={(value: string) => feedBack.onChangeOther(value)}
+                  value={tours.find((tour) => tour.id === +feedBack.value)?.name || ""}
+                  select={onSelectTour}
                   className="mt-20"
                 />
               </div>

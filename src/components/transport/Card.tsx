@@ -29,6 +29,7 @@ const Card: React.FC<ICar> = ({
   how_days_driving_without_driver_3,
 }) => {
   const bookCar = () => {
+    console.log('ed')
     const message = "Hello. I want book a car";
     const phone = "+996706990087"
     const encodedMessage = encodeURIComponent(message);

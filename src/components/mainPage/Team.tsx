@@ -19,7 +19,7 @@ const team = [
     mainDescr: "Лучший папа, лучший муж, лучший брат, лучший лидер",
     descr:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    image: team1,
+    image: team2,
   },
   {
     name: "Ermek",
@@ -27,7 +27,7 @@ const team = [
     mainDescr: "Она росла среди туристов",
     descr:
       "С детства Эркай(так все её называют) свои летние каникулы проводила в юрточном лагере для туристов. Туристы научили её говорить на английском",
-    image: team2,
+    image: team1,
   },
   {
     name: "Айзада",
@@ -42,12 +42,37 @@ const team = [
 const Team: React.FC = () => {
   const sliderBreakPoints = {
     0: {
+      slidesPerView: "auto",
       coverflowEffect: {
-        stretch: -200,
-        depth: 1000,
+        stretch: 0,
+        depth: 1200,
+      },
+    },
+    480: {
+      slidesPerView: "auto",
+      coverflowEffect: {
+        stretch: -100,
+        depth: 1200,
+      },
+    },
+    750: {
+      slidesPerView: 1.9,
+      coverflowEffect: {
+        stretch: -290,
+        depth: 1200,
+      },
+    },
+    1024: {
+      // spaceBetween: 15/0,
+      slidesPerView: 2,
+      coverflowEffect: {
+        stretch: -255,
+
+        depth: 1200,
       },
     },
     1300: {
+      slidesPerView: 2,
       coverflowEffect: {
         stretch: 6,
         depth: 450,
@@ -58,7 +83,7 @@ const Team: React.FC = () => {
   return (
     <div className="py-80">
       <h2 className="mb-40 title-2 text-center">Our Team</h2>
-      <div className="container flex items-center">
+      <div className="container flex items-center dt:justify-center lt:w-full lt:px-0">
         <button className="team-slider-arrow left dt:hidden">
           <img src={leftArrow} alt="left-arrow" />
         </button>
@@ -84,11 +109,11 @@ const Team: React.FC = () => {
           breakpoints={sliderBreakPoints}
         >
           {[...team, ...team].map((person) => (
-            <SwiperSlide>
+            <SwiperSlide className="lt:w-[450px] slt:w-[340px] mbl:w-[280px]">
               <div
                 className="
                     pb-[21px] px-[24px] mx-auto w-[405px] h-[516px] flex flex-col justify-end bg-no-repeat bg-center bg-cover rounded-[8px] text-white 
-                    dt:w-[490px] dt:h-[586px]
+                    dt:w-[490px] dt:h-[586px] lt:w-full lt:h-[570px] slt:h-[460px]
                 "
                 style={{ backgroundImage: `url(${person.image})` }}
               >

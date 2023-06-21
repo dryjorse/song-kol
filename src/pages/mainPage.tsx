@@ -32,7 +32,7 @@ const MainPage: React.FC = () => {
   const getStatus = () => {
     if (reviewsStatus === "loading" || toursStatus === "loading")
       return "loading";
-    if (reviewsStatus === "error" || toursStatus === "error") return "error";
+    if (reviewsStatus === "error" || toursStatus === "error") return "success";
     else return "success";
   };
 

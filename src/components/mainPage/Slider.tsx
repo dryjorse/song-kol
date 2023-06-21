@@ -40,6 +40,7 @@ const Slider: React.FC = () => {
         {data.map((tour) => (
           <div
             style={{
+              background: "linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0,_0,_0,_0.3))",
               backgroundImage: `url(http://${tour.images[0]})`,
               opacity: tour.id === activeIndex ? 1 : 0,
             }}
