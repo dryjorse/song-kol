@@ -30,9 +30,9 @@ const About: React.FC = () => {
       <div className="pt-40 pb-80 bg-dark text-center text-white">
         <div className="container">
           <h2 className="mb-40 title-2 text-white">Why Us?</h2>
-          <ol className="grid grid-cols-2 gap-x-[30px] gap-y-[36px]">
-            <li className="flex items-start justify-between">
-              <span className="text-[100px] leading-[100px]">1</span>
+          <ol className="grid grid-cols-2 gap-x-[30px] gap-y-[36px] lt:grid-cols-1 lt:justify-center">
+            <li className="flex items-start justify-between gap-[10px] lt:justify-center">
+              <span className="text-[100px] leading-[100px] flex-[0_0_80px]">1</span>
               <div className="flex-[0_1_535px] text-start">
                 <h3 className="mb-10 text-[24px] leading-[28px] font-normal">
                   Experienced guides and horsemen with years of experience.
@@ -43,8 +43,8 @@ const About: React.FC = () => {
                 </span>
               </div>
             </li>
-            <li className="flex items-start justify-between row-start-2">
-              <span className="text-[100px] leading-[100px]">2</span>
+            <li className="flex items-start justify-between gap-[10px] row-start-2 lt:justify-center">
+              <span className="text-[100px] leading-[100px] flex-[0_0_80px]">2</span>
               <div className="flex-[0_1_535px] text-start">
                 <h3 className="mb-10 text-[24px] leading-[28px] font-normal">
                   Special horse riding equipment.
@@ -55,8 +55,8 @@ const About: React.FC = () => {
                 </span>
               </div>
             </li>
-            <li className="flex items-start justify-between gap-[35px]">
-              <span className="text-[100px] leading-[100px]">3</span>
+            <li className="flex items-start justify-between gap-[10px] lt:justify-center">
+              <span className="text-[100px] leading-[100px] flex-[0_0_80px]">3</span>
               <div className="flex-[0_1_535px] text-start">
                 <h3 className="mb-10 text-[24px] leading-[28px] font-normal">
                   We are direct organizers.
@@ -67,8 +67,8 @@ const About: React.FC = () => {
                 </span>
               </div>
             </li>
-            <li className="flex items-start justify-between gap-[35px]">
-              <span className="text-[100px] leading-[100px]">4</span>
+            <li className="flex items-start justify-between gap-[10px] lt:justify-center">
+              <span className="text-[100px] leading-[100px] flex-[0_0_80px]">4</span>
               <div className="flex-[0_1_535px] text-start">
                 <h3 className="mb-10 text-[24px] leading-[28px] font-normal">
                   Experts in horseback riding tours.

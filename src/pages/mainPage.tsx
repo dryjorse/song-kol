@@ -38,14 +38,16 @@ const MainPage: React.FC = () => {
 
   return (
     <StatusCheck status={getStatus()}>
-      <Slider />
-      <div className="container py-80">
-        <Reviews />
-      </div>
-      {/* <About /> */}
-      <Team />
-      <div ref={questionsRef}>
-        <Questions />
+      <div>
+        <Slider />
+        <div className="container py-80">
+          <Reviews />
+        </div>
+        <About />
+        <Team />
+        <div ref={questionsRef}>
+          <Questions />
+        </div>
       </div>
     </StatusCheck>
   );

@@ -92,7 +92,6 @@ const Team: React.FC = () => {
           grabCursor
           slidesPerView={2}
           modules={[EffectCoverflow, Navigation, Pagination]}
-          loop
           pagination={{ clickable: true }}
           spaceBetween={30}
           centeredSlides
@@ -106,13 +105,15 @@ const Team: React.FC = () => {
             modifier: 1,
             slideShadows: false,
           }}
+          loop
+          // @ts-ignore
           breakpoints={sliderBreakPoints}
         >
-          {[...team, ...team].map((person) => (
+          {(team.length > 3 ? team : [...team, ...team]).map((person) => (
             <SwiperSlide className="lt:w-[450px] slt:w-[340px] mbl:w-[280px]">
               <div
                 className="
-                    pb-[21px] px-[24px] mx-auto w-[405px] h-[516px] flex flex-col justify-end bg-no-repeat bg-center bg-cover rounded-[8px] text-white 
+                    relative pb-[21px] px-[24px] mx-auto w-[405px] h-[516px] flex flex-col justify-end bg-no-repeat bg-center bg-cover shadow-[inset_0_0_100px_2px_rgba(0,_0,_0,_0.7)] rounded-[8px] text-white
                     dt:w-[490px] dt:h-[586px] lt:w-full lt:h-[570px] slt:h-[460px]
                 "
                 style={{ backgroundImage: `url(${person.image})` }}

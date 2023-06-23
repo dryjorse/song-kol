@@ -4,6 +4,7 @@ import { RootState, useAppDispatch } from "../../store/store";
 import { IInput, useInput } from "../../hooks/useInput";
 import Select from "../ui/Select";
 import whatsapp from "../../assets/images/common/whatsapp.svg";
+import whatsappHover from "../../assets/images/common/whatsapp-hover.svg";
 import {
   // @ts-ignore
   Transition,
@@ -15,6 +16,7 @@ import {
   setPrivateTourStatus,
 } from "../../store/slices/tourSlice";
 import loading from "../../assets/images/ui/loading.gif";
+import Icon from "../ui/Icon";
 
 interface FomrProps {
   title: string;
@@ -76,6 +78,7 @@ const Form: React.FC<FomrProps> = ({
 
   useEffect(() => {
     if (status === "success" || status === "error") {
+      // @ts-ignore
       successTimeout = setTimeout(
         () =>
           isPrivate
@@ -245,8 +248,9 @@ const Form: React.FC<FomrProps> = ({
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img
+                  <Icon
                     src={whatsapp}
+                    hoverSrc={whatsappHover}
                     className="w-[50px] h-[50px] dt:mx-auto"
                     alt="whatsapp"
                   />

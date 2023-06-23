@@ -27,7 +27,7 @@ const TourCard: React.FC<TourCardProps> = ({
         background: `url(http://${images[0]}) no-repeat center`,
         backgroundSize: "cover",
       }}
-      className={`w-full rounded-10 p-20 min-h-[405px] flex flex-col justify-end text-[#F3F3F3] lt:min-h-[300px] slt:max-w-[335px] slt:min-h-[215px] tb:justify-self-center mbl:max-w-none ${className}`}
+      className={`w-full rounded-10 p-20 min-h-[405px] flex flex-col justify-end text-[#F3F3F3] shadow-[inset_0_0_100px_12px_rgba(0,0,0,0.5)] lt:min-h-[300px] slt:max-w-[335px] slt:min-h-[215px] tb:justify-self-center mbl:max-w-none ${className}`}
     >
       <h4 className="mb-20 text-24 leading-[28px] font-normal lt:text-18 lt:leading-[24px] lt:mb-[4px]">
         {name}

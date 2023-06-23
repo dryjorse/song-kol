@@ -14,8 +14,8 @@ const Photo: React.FC = () => {
       {data.photos?.images.length ? (
         <ul className="pb-20 grid grid-cols-2 gap-[10px] bottom-line tb:grid-cols-1">
           {data.photos?.images.map((photo, key) => (
-            <li key={key}>
-              <img className="tb:mx-auto" src={`http://${photo}`} alt="minor" />
+            <li className="max-h-[295px]" key={key}>
+              <img className="w-full h-full object-cover tb:mx-auto" src={`http://${photo}`} alt="minor" />
             </li>
           ))}
         </ul>
