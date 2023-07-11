@@ -260,10 +260,9 @@
     opacity: 0;
     transition: all 0.2s ease-in;
   }
-  .main-swiper .swiper-slide-next {
-    opacity: 1;
-  }
-  .main-swiper .swiper-slide-visible {
+  .main-swiper .swiper-slide-next,
+  .main-swiper .swiper-slide-visible,
+  .main-swiper .swiper-slide-active {
     opacity: 1;
   }
   .main-swiper .swiper-button-prev {
@@ -292,6 +291,10 @@
   }
   .swiper-wrapper {
     width: 800px;
+  }
+  .team-swiper .swiper-pagination {
+    position: static;
+    margin-top: 35px;
   }
 
   @media (max-width: 480px) {

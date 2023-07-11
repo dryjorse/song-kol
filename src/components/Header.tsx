@@ -7,11 +7,16 @@ import { useIsLoading } from "../hooks/useIsLoading";
 import logo from "../assets/images/common/logo.svg";
 import logoWhite from "../assets/images/common/logo-white.svg";
 import whatsapp from "../assets/images/common/whatsapp.svg";
+import hoverWhatsapp from "../assets/images/common/whatsapp-hover.svg";
 import tripAdvisor from "../assets/images/common/trip-advisor.svg";
+import tripAdvisorHover from "../assets/images/common/trip-advisor-hover.svg";
 import facebook from "../assets/images/common/facebook.svg";
+import facebookHover from "../assets/images/common/facebook-hover.svg";
 import instagram from "../assets/images/common/instagram.svg";
+import instagramHover from "../assets/images/common/instagram-hover.svg";
 import burgerIcon from "../assets/images/header/burger.svg";
 import burgerIconWhite from "../assets/images/header/burger-white.svg";
+import Icon from "./ui/Icon";
 
 const Header: React.FC = () => {
   const location = useLocation();
@@ -85,22 +90,22 @@ const Header: React.FC = () => {
           <ul className="flex items-center gap-[20px] slt:gap-[10px]">
             <li>
               <a href="" target="_blank" rel="noreferrer">
-                <img src={whatsapp} alt="whatsapp" />
+                <Icon className="w-[40px] h-[40px]" src={whatsapp} hoverSrc={hoverWhatsapp} alt="whatsapp" />
               </a>
             </li>
             <li>
               <a href="" target="_blank" rel="noreferrer">
-                <img src={tripAdvisor} alt="tripAdvisor" />
+                <Icon className="w-[40px] h-[40px]" src={tripAdvisor} hoverSrc={tripAdvisorHover} alt="tripAdvisor" />
               </a>
             </li>
             <li>
               <a href="" target="_blank" rel="noreferrer">
-                <img src={facebook} alt="facebook" />
+                <Icon className="w-[40px] h-[40px]" src={facebook} hoverSrc={facebookHover} alt="facebook" />
               </a>
             </li>
             <li>
-              <a href="" target="_blank" rel="noreferrer">
-                <img src={instagram} alt="instagram" />
+              <a href="https://instagram.com/songkol_travel?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noreferrer">
+                <Icon className="w-[40px] h-[40px]" src={instagram} hoverSrc={instagramHover} alt="instagram" />
               </a>
             </li>
           </ul>

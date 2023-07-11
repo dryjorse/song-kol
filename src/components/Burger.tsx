@@ -37,19 +37,19 @@ const Burger: React.FC<BurgerProps> = ({ setIsActive, animateKey }) => {
           "
         >
           <li>
-            <Link to="/tours">Tours</Link>
+            <Link to="/tours" onClick={closeBurger}>Tours</Link>
           </li>
           <li>
-            <Link to="/transport">Transport</Link>
+            <Link to="/transport" onClick={closeBurger}>Transport</Link>
           </li>
           <li>
-            <Link to="/reviews">Reviews</Link>
+            <Link to="/reviews" onClick={closeBurger}>Reviews</Link>
           </li>
           <li>
-            <Link to="/blogNews">Blog & News</Link>
+            <Link to="/blogNews" onClick={closeBurger}>Blog & News</Link>
           </li>
           <li>
-            <Link to="/?questions">Questions</Link>
+            <Link to="/?questions" onClick={closeBurger}>Questions</Link>
           </li>
         </ul>
       </div>

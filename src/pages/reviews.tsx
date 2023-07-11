@@ -32,13 +32,13 @@ const Reviews: React.FC = () => {
   };
 
   return (
-    <StatusCheck status={getStatus()}>
-      <div className="container pt-[140px] pb-80">
-        <h1>Reviews</h1>
-        <Form />
+    <div className="container pt-[140px] pb-80">
+      <h1>Reviews</h1>
+      <Form />
+      <StatusCheck status={getStatus()}>
         <Content />
-      </div>
-    </StatusCheck>
+      </StatusCheck>
+    </div>
   );
 };
 

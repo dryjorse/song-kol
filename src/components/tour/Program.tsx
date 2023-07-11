@@ -8,6 +8,7 @@ import geoIcon from "../../assets/images/tour/geo-icon.svg";
 import car from "../../assets/images/tour/car.svg";
 import food from "../../assets/images/tour/food.svg";
 import horse from "../../assets/images/tour/horse.svg";
+import byfoot from "../../assets/images/tour/byfoot.svg";
 import sleep from "../../assets/images/tour/sleep.svg";
 import road from "../../assets/images/tour/road.svg";
 
@@ -36,6 +37,9 @@ const Program: React.FC = () => {
       case "Верхом":
       case "horse":
         return horse;
+      case "Пешком":
+      case "on foot":
+        return byfoot;
       default:
         break;
     }

@@ -1,9 +1,14 @@
 import React from "react";
 import logo from "../assets/images/common/logo-two.svg";
 import whatsapp from "../assets/images/common/whatsapp.svg";
+import whatsappHover from "../assets/images/common/whatsapp-hover.svg";
 import tripAdvisor from "../assets/images/common/trip-advisor.svg";
+import tripAdvisorHover from "../assets/images/common/trip-advisor-hover.svg";
 import facebook from "../assets/images/common/facebook.svg";
+import facebookHover from "../assets/images/common/facebook-hover.svg";
 import instagram from "../assets/images/common/instagram.svg";
+import instagramHover from "../assets/images/common/instagram-hover.svg";
+import Icon from "./ui/Icon";
 
 const Footer: React.FC = () => {
   return (
@@ -19,22 +24,22 @@ const Footer: React.FC = () => {
           <ul className="flex items-center gap-[30px]">
             <li>
               <a href="" target="_blank" rel="noreferrer">
-                <img src={whatsapp} alt="whatsapp" />
+                <Icon className="w-[40px] h-[40px]" src={whatsapp} hoverSrc={whatsappHover} alt="whatsapp" />
               </a>
             </li>
             <li>
               <a href="" target="_blank" rel="noreferrer">
-                <img src={tripAdvisor} alt="tripAdvisor" />
+                <Icon className="w-[40px] h-[40px]"  src={tripAdvisor} hoverSrc={tripAdvisorHover} alt="tripAdvisor" />
               </a>
             </li>
             <li>
               <a href="" target="_blank" rel="noreferrer">
-                <img src={facebook} alt="facebook" />
+                <Icon className="w-[40px] h-[40px]"  src={facebook} hoverSrc={facebookHover} alt="facebook" />
               </a>
             </li>
             <li className=":[&:nth-child(3)]:hover:underline">
               <a href="" target="_blank" rel="noreferrer">
-                <img src={instagram} alt="instagram" />
+                <Icon className="w-[40px] h-[40px]"  src={instagram} hoverSrc={instagramHover} alt="instagram" />
               </a>
             </li>
           </ul>

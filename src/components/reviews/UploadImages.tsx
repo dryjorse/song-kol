@@ -101,6 +101,7 @@ const UploadImages: React.FC<UploadImagesProps> = ({
         onChange={handleImages}
         id="review-images"
         type="file"
+        accept=".jpg, .jpeg, .png"
         className="hidden"
       />
     </div>

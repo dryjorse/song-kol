@@ -43,7 +43,7 @@ const Slider: React.FC = () => {
               backgroundImage: `url(http://${tour.images[0]})`,
               opacity: tour.id === activeIndex ? 1 : 0,
             }}
-            className="absolute top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat animate-def"
+            className="absolute top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat shadow-[inset_0_0_100px_100vw_rgba(0,_0,_0,_0.3)] animate-def"
             key={tour.id}
           ></div>
         ))}
@@ -106,7 +106,7 @@ const Slider: React.FC = () => {
               // autoplay={{ delay: 3000, disableOnInteraction: false }}
               watchSlidesProgress
               slideVisibleClass="swiper-slide-visible"
-              loop
+              loop={data.length > 2}
               speed={500}
               breakpoints={swiperBreakPoints}
             >
@@ -118,7 +118,7 @@ const Slider: React.FC = () => {
                         backgroundImage: `url(http://${tour.images[0]}`,
                         // opacity: isVisible ? 1 : 0,
                       }}
-                      className="rounded-[8px] p-10 w-full h-[235px] flex flex-col justify-end bg-cover bg-no-repeat bg-center animate-def slt:h-[170px]"
+                      className="rounded-[8px] p-10 w-full h-[235px] flex flex-col justify-end bg-cover bg-no-repeat bg-center shadow-[inset_0_0_100px_12px_rgba(0,0,0,0.50)] animate-def slt:h-[170px]"
                     >
                       <h3 className="mb-10 text-16 leading-[18px] font-normal">
                         {tour.name}
