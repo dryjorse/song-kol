@@ -8,6 +8,7 @@ import starActive from "../../assets/images/common/star-active.svg";
 import { Link } from "react-router-dom";
 import Text from "../ui/Text";
 import { API_URL } from "../../http";
+import { months } from "../../uttilities";
 
 export const Reviews: React.FC = () => {
   const { data } = useSelector((state: RootState) => state.reviews);
@@ -77,7 +78,7 @@ export const Reviews: React.FC = () => {
                   ))}
               </ul>
               <span className="block text-end text-grayLight text-[14px] leading-[16px]">
-                {review.date.month}, {review.date.year}
+                {months[review.date.month - 1]} {review.date.day}, {review.date.year}
               </span>
             </li>
           ))

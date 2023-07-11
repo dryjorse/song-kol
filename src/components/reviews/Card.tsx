@@ -54,15 +54,7 @@ const Card: React.FC<IReview> = ({ name, stars, text, photos, date }) => {
         )}
       </Swiper>
       <span className="block text-end text-[14px] leading-[16px] text-[#707070]">
-        {
-          months[
-            +(date.month + "")
-              .split("")
-              .filter((letter) => letter !== "0")
-              .join("")
-          ]
-        }{" "}
-        {date.day}, {date.year}
+        {months[date.month - 1]} {date.day}, {date.year}
       </span>
     </div>
   );
