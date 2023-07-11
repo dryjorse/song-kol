@@ -36,7 +36,7 @@ const Slider: React.FC = () => {
 
   if (data.length)
     return (
-      <section className="h-[720px] relative text-white ldt:h-[calc(100vh+450px)]">
+      <section className="h-[720px] relative text-white ldt:h-[calc(100vh+400px)]">
         {data.map((tour) => (
           <div
             style={{
@@ -47,7 +47,7 @@ const Slider: React.FC = () => {
             key={tour.id}
           ></div>
         ))}
-        <div className="absolute top-[265px] left-0 w-full z-[100] h-full ldt:top-0 ldt:pb-80">
+        <div className="absolute top-[265px] left-0 w-full z-[100] h-[calc(100%_-_265px)] ldt:h-full ldt:top-0 ldt:pb-80">
           <div className="h-full container flex justify-between gap-[30px] ldt:flex-col ldt:items-center">
             <div className="relative flex-[0_0_625px] z-10 ldt:flex-[1_1_200px] ldt:flex ldt:items-center">
               {data

@@ -47,7 +47,7 @@ const Card: React.FC<IReview> = ({ name, stars, text, photos, date }) => {
               <img
                 src={`${API_URL}${image}`}
                 alt="review"
-                className="w-full h-full"
+                className="mx-auto h-full object-contain max-h-[305px]"
               />
             </SwiperSlide>
           )
