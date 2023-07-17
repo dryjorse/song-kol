@@ -56,7 +56,7 @@ const Slider: React.FC = () => {
               style={{
                 backgroundImage: `url(http://${image})`,
               }}
-              className="w-full min-h-[600px] bg-center bg-no-repeat bg-cover"
+              className="w-full min-h-[600px] bg-center bg-no-repeat bg-cover shadow-[inset_0_0_100px_100vw_rgba(0,_0,_0,_0.1)]"
             ></div>
           </SwiperSlide>
         ))}
