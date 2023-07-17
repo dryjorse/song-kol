@@ -36,7 +36,7 @@ const Slider: React.FC = () => {
 
   if (data.length)
     return (
-      <section className="h-[720px] relative text-white ldt:h-[calc(100vh+400px)]">
+      <section className="h-[720px] relative text-white ldt:h-[calc(100vh+400px)] ldt:max-h-[930px]">
         {data.map((tour) => (
           <div
             style={{
