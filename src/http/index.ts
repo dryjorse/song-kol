@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const API_URL = "http://54.221.154.41";
+export const API_URL = "http://api.song-kol.com";
 
 export const $api = axios.create({
   baseURL: API_URL + "/",

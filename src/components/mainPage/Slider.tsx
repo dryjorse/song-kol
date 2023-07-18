@@ -10,6 +10,7 @@ import clock from "../../assets/images/tours/clock.svg";
 import person from "../../assets/images/tours/person.svg";
 import price from "../../assets/images/tours/price.svg";
 import calendar from "../../assets/images/tours/calendar.svg";
+import "./styleTour/slider.css"
 
 const Slider: React.FC = () => {
   const { data } = useSelector((state: RootState) => state.tours);
@@ -118,7 +119,7 @@ const Slider: React.FC = () => {
                         backgroundImage: `url(http://${tour.images[0]}`,
                         // opacity: isVisible ? 1 : 0,
                       }}
-                      className="rounded-[8px] p-10 w-full h-[235px] flex flex-col justify-end bg-cover bg-no-repeat bg-center shadow-[inset_0_0_100px_12px_rgba(0,0,0,0.50)] animate-def slt:h-[170px]"
+                      className="rounded-[8px] sliderSnadow p-10 w-full h-[235px] flex flex-col justify-end bg-cover bg-no-repeat  bg-center animate-def slt:h-[170px]"
                     >
                       <h3 className="mb-10 text-16 leading-[18px] font-normal">
                         {tour.name}
