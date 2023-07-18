@@ -70,7 +70,7 @@ export const Reviews: React.FC = () => {
                       key={key}
                     >
                       <img
-                        className="rounded-[4px] w-full h-full"
+                        className="rounded-[4px] w-full h-full object-contain"
                         src={`${API_URL}${image[0]}`}
                         alt="review"
                       />

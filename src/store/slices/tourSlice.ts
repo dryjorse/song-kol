@@ -29,7 +29,9 @@ export const getTour = createAsyncThunk<
     return {
       ...data,
       program: program?.data.results,
-      dates: dates?.data.results,
+      dates: dates?.data.results.filter(
+        (program: { tour: string }) => program.tour === data.name
+      ),
       reviews: reviews?.slice(0, 2) || [],
       reviewsCount: reviews?.length || 0,
       similarTours: similar?.results || [],
