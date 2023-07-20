@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useCallback } from "react";
 import { useInput } from "../../hooks/useInput";
 import { RootState, useAppDispatch } from "../../store/store";
 import { setSearchValue } from "../../store/slices/blogNewsSlice";

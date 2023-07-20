@@ -61,9 +61,9 @@ const toursSlice = createSlice({
       state.types = action.payload.types;
       state.status = "success";
     });
-    builder.addCase(getTours.rejected, (state, action) => {
+    builder.addCase(getTours.rejected, (state) => {
       state.status = "error";
-      state.message = action.payload?.errorMessage || "";
+      state.message = "error";
     });
   },
 });
