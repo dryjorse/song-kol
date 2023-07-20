@@ -26,7 +26,7 @@ const Slider: React.FC = () => {
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop
       >
-        <div className="absolute top-0 left-0 w-full min-h-[600px] flex flex-col items-center justify-center bg-center bg-no-repeat bg-cover text-center text-white z-30 pointer-events-none">
+        <div className="absolute top-0 left-0 w-full min-h-[600px] flex flex-col items-center justify-center bg-center bg-no-repeat bg-cover text-center text-white shadow-[inset_0_0_100px_100vw_rgba(0,_0,_0,_0.40)] z-30 pointer-events-none">
           <h2 className="mb-80 font-medium mbl:text-[34px] mbl:leading-[40px] mbl:font-normal">{data.name}</h2>
           <div className="flex gap-[40px] whitespace-nowrap mbl:flex-col mbl:gap-[20px] mbl:text-14">
             <div className="flex gap-[40px] mbl:gap-[20px]">

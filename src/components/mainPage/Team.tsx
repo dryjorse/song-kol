@@ -2,44 +2,18 @@ import React from "react";
 // @ts-ignore
 import { EffectCoverflow, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import team1 from "../../assets/images/main-page/team1.jpg";
-import team2 from "../../assets/images/main-page/team2.jpg";
-import team3 from "../../assets/images/main-page/team3.jpg";
 import quotationMark from "../../assets/images/main-page/quotation-mark.svg";
 import leftArrow from "../../assets/images/main-page/left-arrow.svg";
 import rightArrow from "../../assets/images/main-page/right-arrow.svg";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-
-const team = [
-  {
-    name: "Тажиев Руслан",
-    type: "Основатель",
-    mainDescr: "Лучший папа, лучший муж, лучший брат, лучший лидер",
-    descr:
-      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    image: team2,
-  },
-  {
-    name: "Ermek",
-    type: "Пеший гид, дизайнер 2 года",
-    mainDescr: "Она росла среди туристов",
-    descr:
-      "С детства Эркай(так все её называют) свои летние каникулы проводила в юрточном лагере для туристов. Туристы научили её говорить на английском",
-    image: team1,
-  },
-  {
-    name: "Айзада",
-    type: "Менеджер",
-    mainDescr: "Она совмещает в себе несколько людей",
-    descr:
-      "Айзада не только менджер Сон-Кол Тревел, но и мама, блогер, спортсменка ...",
-    image: team3,
-  },
-];
+import { RootState } from "../../store/store";
+import { useSelector } from "react-redux";
 
 const Team: React.FC = () => {
+  const { data } = useSelector((state: RootState) => state.team);
+
   const sliderBreakPoints = {
     0: {
       slidesPerView: "auto",
@@ -80,6 +54,8 @@ const Team: React.FC = () => {
     },
   };
 
+  if (!data.length) return <></>;
+
   return (
     <div className="py-80">
       <h2 className="mb-40 title-2 text-center">Our Team</h2>
@@ -105,30 +81,36 @@ const Team: React.FC = () => {
             modifier: 1,
             slideShadows: false,
           }}
-          loop
+          loop={data.length >= 3}
           // @ts-ignore
           breakpoints={sliderBreakPoints}
         >
-          {(team.length > 3 ? team : [...team, ...team]).map((person, key) => (
-            <SwiperSlide key={key} className="lt:w-[450px] slt:w-[340px] mbl:w-[280px]">
+          {(data.length >= 3 && data.length < 6
+            ? [...data, ...data]
+            : data
+          ).map((person, key) => (
+            <SwiperSlide
+              key={key}
+              className="lt:w-[450px] slt:w-[340px] mbl:w-[280px]"
+            >
               <div
                 className="
-                    relative pb-[21px] px-[24px] mx-auto w-[405px] h-[516px] flex flex-col justify-end bg-no-repeat bg-center bg-cover shadow-[inset_0_0_100px_2px_rgba(0,_0,_0,_0.7)] rounded-[8px] text-white
+                    relative pb-[21px] px-[24px] mx-auto w-[405px] h-[516px] flex flex-col justify-end bg-no-repeat bg-center bg-cover rounded-[8px] text-white before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-[linear-gradient(180deg,_rgba(0,0,0,0.00)_0%,_rgba(0,0,0,0.70)_100%)] before:rounded-[8px]
                     dt:w-[490px] dt:h-[586px] lt:w-full lt:h-[570px] slt:h-[460px]
                 "
                 style={{ backgroundImage: `url(${person.image})` }}
               >
-                <h3 className="text-[24px] leading-[28px] font-medium">
+                <h3 className="text-[24px] leading-[28px] font-medium z-10">
                   {person.name}
                 </h3>
-                <span className="block mt-[4px] mb-[7px] text-[rgba(190,_190,_190,_1)]">
-                  {person.type}
+                <span className="flex items-center gap-[8px] mt-[4px] mb-[7px] text-[rgba(190,_190,_190,_1)] z-10">
+                  {person.position} <span className="inline-block w-[4px] h-[4px] bg-[#BEBEBE] rounded-[50%]"></span> {person.experience}
                 </span>
-                <span className="flex items-center gap-[7px] text-[rgba(255,_184,_0,_1)]">
+                <span className="flex items-center gap-[7px] text-[rgba(255,_184,_0,_1)] z-10">
                   <img src={quotationMark} alt="quotation-mark" />
-                  <span>{person.mainDescr}</span>
+                  <span>{person.quote}</span>
                 </span>
-                <p className="mt-[12px]">{person.descr}</p>
+                <p className="mt-[12px] z-10">{person.description}</p>
               </div>
             </SwiperSlide>
           ))}

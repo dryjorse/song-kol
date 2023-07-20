@@ -119,12 +119,12 @@ const Slider: React.FC = () => {
                         backgroundImage: `url(http://${tour.images[0]}`,
                         // opacity: isVisible ? 1 : 0,
                       }}
-                      className="rounded-[8px] sliderSnadow p-10 w-full h-[235px] flex flex-col justify-end bg-cover bg-no-repeat  bg-center animate-def slt:h-[170px]"
+                      className="relative rounded-[8px] p-10 w-full h-[235px] flex flex-col justify-end bg-cover bg-no-repeat bg-center animate-def before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-[linear-gradient(180deg,_rgba(0,0,0,0.00)_0%,_rgba(0,0,0,0.70)_100%)] before:rounded-[8px] slt:h-[170px] "
                     >
-                      <h3 className="mb-10 text-16 leading-[18px] font-normal">
+                      <h3 className="mb-10 text-16 leading-[18px] font-normal z-10">
                         {tour.name}
                       </h3>
-                      <span className="text-[24px] leading-[28px] font-medium slt:text-[20px] slt:leading-[23px]">
+                      <span className="text-[24px] leading-[28px] font-medium slt:text-[20px] slt:leading-[23px] z-10">
                         {tour.price}$
                       </span>
                     </div>

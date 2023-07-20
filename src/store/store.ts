@@ -7,6 +7,7 @@ import transportSlice from "./slices/transportSlice";
 import blogNewsSlice from "./slices/blogNewsSlice";
 import blogNewsAboutSlice from "./slices/blogNewsAboutSlice";
 import questionsSlice from "./slices/questionsSlice";
+import teamSlice from "./slices/teamSlice";
 
 export const store = configureStore({
   reducer: {
@@ -17,6 +18,7 @@ export const store = configureStore({
     blogNews: blogNewsSlice,
     blogNewsAbout: blogNewsAboutSlice,
     questions: questionsSlice,
+    team: teamSlice,
   },
 });
 

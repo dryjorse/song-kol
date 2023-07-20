@@ -123,3 +123,13 @@ export interface IBlogNews {
   content?: TrustedHTML | null;
   similar?: { id: number; title: string; date_posted: string; image: string }[];
 }
+
+export interface ITeamPerson {
+  id: number;
+  image: string;
+  name: string;
+  position: string;
+  experience: string;
+  quote: string;
+  description: string;
+}

@@ -26,9 +26,9 @@ const Blog: React.FC = () => {
       <div className="pt-[120px] pb-80 lt:pb-40">
         <div
           style={{ backgroundImage: `url(${data.image})` }}
-          className="pb-40 min-h-[515px] flex flex-col justify-end bg-cover bg-center bg-no-repeat text-white text-start"
+          className="relative pb-40 min-h-[515px] flex flex-col justify-end bg-cover bg-center bg-no-repeat text-white text-start before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-[linear-gradient(180deg,_rgba(217,217,217,0.00)_0%,_rgba(0,0,0,0.60)_100%)]"
         >
-          <div className="container">
+          <div className="container z-10">
             <h1 className="text-[48px] leading-[56px] font-medium text-white text-start">
               {data.title}
             </h1>

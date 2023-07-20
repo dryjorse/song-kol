@@ -38,7 +38,6 @@ const BlogNews: React.FC = () => {
       const neighborHeight =
         //@ts-ignore
         stickyBlock?.previousElementSibling?.firstChild.offsetHeight;
-      console.log(neighborHeight, asideHeight);
 
       if (
         stickyBlock &&
@@ -78,7 +77,6 @@ const BlogNews: React.FC = () => {
     const neighborHeight =
       //@ts-ignore
       stickyBlock?.previousElementSibling?.firstChild.offsetHeight;
-    console.log(asideHeight, neighborHeight);
     if (
       isLt &&
       asideHeight >= neighborHeight &&

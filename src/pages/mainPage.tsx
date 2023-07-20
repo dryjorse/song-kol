@@ -10,6 +10,7 @@ import { getReviews } from "../store/slices/reviewsSlice";
 import StatusCheck from "../components/ui/StatusCheck";
 import { useSelector } from "react-redux";
 import Team from "../components/mainPage/Team";
+import { getTeam } from "../store/slices/teamSlice";
 
 const MainPage: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -17,10 +18,12 @@ const MainPage: React.FC = () => {
   const questionsRef = useRef<HTMLDivElement>(null);
   const toursStatus = useSelector((state: RootState) => state.tours.status);
   const reviewsStatus = useSelector((state: RootState) => state.reviews.status);
+  const teamStatus = useSelector((state: RootState) => state.team.status)
 
   useEffect(() => {
     dispatch(getTours(4));
     dispatch(getReviews(2));
+    dispatch(getTeam())
   }, []);
 
   useEffect(() => {
@@ -30,9 +33,9 @@ const MainPage: React.FC = () => {
   }, [location.search]);
 
   const getStatus = () => {
-    if (reviewsStatus === "loading" || toursStatus === "loading")
+    if (reviewsStatus === "loading" || toursStatus === "loading" || teamStatus === "loading")
       return "loading";
-    if (reviewsStatus === "error" || toursStatus === "error") return "success";
+    if (reviewsStatus === "error" || toursStatus === "error" || teamStatus === "error") return "success";
     else return "success";
   };
 

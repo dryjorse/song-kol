@@ -18,11 +18,11 @@ const Program: React.FC = () => {
 
   const getIconLocation = (type: string) => {
     switch (type) {
-      case "1":
+      case "Место":
         return geoIcon;
-      case "2":
+      case "Питание":
         return food;
-      case "3":
+      case "Ночлег":
         return sleep;
       default:
         break;
@@ -34,7 +34,7 @@ const Program: React.FC = () => {
       case "На машине":
       case "car":
         return car;
-      case "Верхом":
+      case "Лошадь":
       case "horse":
         return horse;
       case "Пешком":

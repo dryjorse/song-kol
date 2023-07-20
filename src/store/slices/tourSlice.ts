@@ -13,7 +13,7 @@ export const getTour = createAsyncThunk<
 >("tour", async (id, { rejectWithValue }) => {
   try {
     const { data } = await $api(`tour/TourAdd/${id}`);
-    const program = await $api("tour/TourProgram", { params: { tour: id } });
+    const program = await $api("tour/TourProgram/", { params: { tour: id } });
     const dates = await $api(`tour/TourDate/`);
     const similarData = await $api("tour/TourAdd/", {
       params: { keyword: data.name, limit: 4 },
@@ -28,7 +28,7 @@ export const getTour = createAsyncThunk<
 
     return {
       ...data,
-      program: program?.data.results,
+      program: program?.data,
       dates: dates?.data.results.filter(
         (program: { tour: string }) => program.tour === data.name
       ),

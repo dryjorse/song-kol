@@ -17,7 +17,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
     <Link
       to={`/blog/${id}`}
       style={{ backgroundImage: `url(${image})` }}
-      className={`rounded-[8px] text-white flex flex-col justify-end bg-cover bg-no-repeat bg-center text-start ${
+      className={`rounded-[8px] text-white flex flex-col justify-end bg-cover bg-no-repeat bg-center text-start relative before:bg-[linear-gradient(180deg,_rgba(217,217,217,0.00)_0%,_rgba(0,0,0,0.60)_100%)] before:absolute before:w-full before:h-full before:top-0 before:left-0 before:rounded-[8px] ${
         type === "big"
           ? "max-w-[840px] min-h-[517px] p-40 dt:p-20 dt:min-h-[420px] slt:min-h-[270px]"
           : type === "small"
@@ -26,7 +26,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
       }`}
     >
       <h3
-        className={`font-normal mb-10 ${
+        className={`font-normal mb-10 z-20 ${
           type === "big"
             ? "text-[36px] leading-[42px] dt:text-[24px] dt:leading-[28px]"
             : "text-[18px] leading-[24px] dt:text-[16px] dt:leading-[18px] slt:text-[24px] slt:leading-[28px]"
@@ -34,7 +34,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
       >
         {title}
       </h3>
-      <span className="dt:text-[14px] dt:leading-[16px]">
+      <span className="dt:text-[14px] dt:leading-[16px] z-20">
         {date_posted.split("-").join(".")}
       </span>
     </Link>
