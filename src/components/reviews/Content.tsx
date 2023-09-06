@@ -36,9 +36,7 @@ const Content: React.FC = () => {
   const onChangePage = useCallback((newPage: number) => {
     dispatch(setOffset((newPage - 1) * 6));
   }, []);
-
-  console.log(sortBy)
-
+  
   return (
     <div className="container mt-[120px]">
       <div>

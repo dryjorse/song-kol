@@ -97,14 +97,12 @@ const Slider: React.FC = () => {
                 ))}
             </div>
             <Swiper
-              // style={{display: "table-row-group"}}
               slidesPerView={1}
               spaceBetween={30}
               className="pt-[80px] main-swiper overflow-visible ldt:w-full"
               onSlideChange={onSlideChange}
               modules={[Autoplay, Navigation]}
               navigation
-              // autoplay={{ delay: 3000, disableOnInteraction: false }}
               watchSlidesProgress
               slideVisibleClass="swiper-slide-visible"
               loop={data.length > 2}
@@ -117,7 +115,6 @@ const Slider: React.FC = () => {
                     <div
                       style={{
                         backgroundImage: `url(http://${tour.images[0]}`,
-                        // opacity: isVisible ? 1 : 0,
                       }}
                       className="relative rounded-[8px] p-10 w-full h-[235px] flex flex-col justify-end bg-cover bg-no-repeat bg-center animate-def before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-[linear-gradient(180deg,_rgba(0,0,0,0.00)_0%,_rgba(0,0,0,0.70)_100%)] before:rounded-[8px] slt:h-[170px] "
                     >

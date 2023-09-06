@@ -81,14 +81,11 @@ const Team: React.FC = () => {
             modifier: 1,
             slideShadows: false,
           }}
-          loop={data.length >= 3}
+          loop={data.length >= 6}
           // @ts-ignore
           breakpoints={sliderBreakPoints}
         >
-          {(data.length >= 3 && data.length < 6
-            ? [...data, ...data]
-            : data
-          ).map((person, key) => (
+          {data.map((person, key) => (
             <SwiperSlide
               key={key}
               className="lt:w-[450px] slt:w-[340px] mbl:w-[280px]"

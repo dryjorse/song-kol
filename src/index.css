@@ -71,6 +71,9 @@
   .swiper-pagination-bullet {
     outline: none;
   }
+  .swiper-pagination {
+    z-index: 100;
+  }
   .tour-swiper .swiper-pagination-bullet {
     width: 10px;
     height: 10px;

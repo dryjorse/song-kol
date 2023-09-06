@@ -74,10 +74,19 @@ const Program: React.FC = () => {
             >
               {program.locations.map((location, key) => (
                 <div key={key}>
-                  <div className="relative flex items-center gap-[8px] leading-[18px] font-medium">
-                    <img src={getIconLocation(location.type)} alt="route" />
-                    <span>{location.name_location}</span>
-                    <p className="absolute top-0 left-[180px] font-normal text-start">
+                  <div className="flex justify-between gap-[8px] leading-[18px] font-medium">
+                    <div className="flex-[0_0_120px] flex flex-col">
+                      <div className="flex items-center gap-[8px]">
+                        <img src={getIconLocation(location.type)} alt="route" />
+                        <span>{location.name_location}</span>
+                      </div>
+                      {key + 1 < program.locations.length && (
+                        <div style={{backgroundImage: `url(${road})`}} className="my-10 ml-[50px] w-[2px] min-h-[30px] self-baseline flex-grow bg-repeat-y">
+
+                        </div>
+                      )}
+                    </div>
+                    <p className="flex-[0_1_623px] font-normal text-start">
                       {!isTb
                         ? location.description_location
                         : location.description_location
@@ -88,13 +97,12 @@ const Program: React.FC = () => {
                   </div>
                   {key + 1 < program.locations.length && (
                     <>
-                      <img className="my-10 pl-[50px]" src={road} alt="road" />
                       <div className="relative flex items-center gap-[8px] leading-[18px]">
                         <img
-                          src={getIconMoving(location.nextTransport.type)}
+                          src={getIconMoving(location.nextTransport?.type)}
                           alt="route"
                         />
-                        <span>{location.nextTransport.time}</span>
+                        <span>{location.nextTransport?.time}</span>
                       </div>
                       <img className="my-10 pl-[50px]" src={road} alt="road" />
                     </>
